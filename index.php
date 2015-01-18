@@ -62,7 +62,7 @@
 <body>
     <h1>×Ö·û±àÂë</h1>
 	<div id="maintable">
-    <form action="index.php" method="post">
+    <form action="index.php" method="get">
 		<div class="left">
 			<table>
             <tr><td> <input type="text" name="pic_url" value="±ØÌî" onclick="if(this.value=='±ØÌî'){this.value='';}"> </td></tr>
@@ -80,11 +80,11 @@
 	<div id="show">
 		<?php
 		echo '<div id="submitresulthead" style="word-break:break-all;">';
-		if(!empty($_POST["pic_url"])) { 
+		if(!empty($_GET["pic_url"])) { 
 
 			$t = time();
-			if(isset($_POST["read"])) {
-				system("sh ./demo_encode.sh \"".$_POST["pic_url"]."\" ".$t, $retval);
+			if(isset($_GET["read"])) {
+				system("sh ./demo_encode.sh \"".$_GET["pic_url"]."\" ".$t, $retval);
 				//sleep(3);
 			}
 
