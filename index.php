@@ -1,6 +1,8 @@
 <html>
 <head>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
     <title>字符编码</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb18030">
     <style>
         input {
             border-left: 0px;
@@ -90,7 +92,7 @@
 			$result_url = $t."norm.log";
 			$fp = fopen($result_url, "r");
 			echo "<hr/>";
-			while (!feof($fp)) {
+			while ($fp and !feof($fp)) {
 				$line = fgets($fp);
 				if(strrpos($line, "LocalIndex") !== false) {
 					echo '</div><div id="submitresult">';
@@ -103,7 +105,7 @@
 
 			echo '</div>';
 
-			system("rm -f ".$t."*.log", $retval);
+			//system("rm -f ".$t."*.log", $retval);
 		} else {
 			echo "请输入你想查询的文本内容<br/>";
 		}
