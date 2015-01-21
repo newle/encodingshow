@@ -33,6 +33,13 @@
 			width: 800px;
 			margin: 0 auto;
 		}
+		#readme {
+			position: fixed;
+			right: 20%;
+			top: 20px;
+			width: 80px;
+			margin: 0 auto;
+		}
 
 		h1 {
 			text-align: center;
@@ -61,6 +68,7 @@
 
 <body>
     <h1>字符编码</h1>
+	<a id="readme" href="README.md">页面解释</a>
 	<div id="maintable">
     <form action="index.php" method="get">
 		<div class="left">
@@ -105,7 +113,7 @@
 
 			echo '</div>';
 
-			//system("rm -f ".$t."*.log", $retval);
+			system("rm -f ".$t."*.log", $retval);
 		} else {
 			echo "请输入你想查询的文本内容<br/>";
 		}
