@@ -131,6 +131,17 @@ static void show_code(unsigned char* str, const char* fromcode, const char* toCo
 	printf("\trawResultContent = %s\n\n", rawResultContent.c_str());
 }
 
+void showall(const char* fromcode, unsigned char* str) {
+	printf("content = %s\n\n",(char*)str);
+
+	show_code(str, fromcode, "utf8");
+	show_code(str, fromcode, "gb18030");
+	show_code(str, fromcode, "utf16");
+	show_code(str, fromcode, "unicode");
+
+	printf("===================================================\n");
+}
+
 
 
 int main(int ac, char** av)
@@ -146,18 +157,21 @@ int main(int ac, char** av)
 
 	unsigned char* str = (unsigned char*)strdup(av[2]);
 	char* fromcode = strdup(av[1]);
-	if(strcmp(fromcode, "raw") != 0) {
+	const bool israw = (strcmp(fromcode, "raw") == 0);
+	const bool ischeckraw = (strcmp(fromcode, "checkraw") == 0);
+	if(!israw && !ischeckraw) {
 		str = proprocess(str);
 	} else {
 		free(fromcode);
 		fromcode = strdup("gb18030");
 	}
-	printf("content = %s\n\n",(char*)str);
 
-	show_code(str, fromcode, "utf8");
-	show_code(str, fromcode, "gb18030");
-	show_code(str, fromcode, "utf16");
-	show_code(str, fromcode, "unicode");
+	showall(fromcode, str);
+
+	if(ischeckraw) {
+		showall("utf8", str);
+		showall("unicode", str);
+	}
 
 
 /*
