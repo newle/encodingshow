@@ -1,0 +1,7 @@
+.font17{font-size:17px;}
+.rmb2{color:#eb1429;font-size:17px;font-family:Arial, Helvetica, sans-serif;margin:0 2px 0 0;font-style:normal;}
+.shopprice{color:#DB0012; position:relative;font-family:tahoma, Helvetica, sans-serif;}
+
+
+.postage{height:15px;line-height:15px;background:#F5F5F5;color:#787878;padding:0 8px;display:inline-block;margin:0 0 0 7px; position:relative;top:-2px;*top:-3px;border:1px solid #DEDEDE;}
+.postage em{width:3px;height:3px;background:url(../images/bb.gif) no-repeat; position:absolute;margin:15px 0 0 -9px;*margin:14px 0 0 -9px;}
