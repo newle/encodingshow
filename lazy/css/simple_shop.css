@@ -5,3 +5,24 @@
 
 .postage{height:15px;line-height:15px;background:#F5F5F5;color:#787878;padding:0 8px;display:inline-block;margin:0 0 0 7px; position:relative;top:-2px;*top:-3px;border:1px solid #DEDEDE;}
 .postage em{width:3px;height:3px;background:url(../images/bb.gif) no-repeat; position:absolute;margin:15px 0 0 -9px;*margin:14px 0 0 -9px;}
+
+.float_right { float:right; }
+.float_left { float:left; }
+.middle { margin:0 50%; }
+.hmiddle { margin:50% 0; }
+.solid_border {border-style: solid; border-width:1px}
+.margin10 {margin: 0 10%;}
+.margin20 {margin: 0 20% 0 20%;}
+.margin30 {margin: 0 30%;}
+.margin40 {margin: 0 40%;}
+.margin50 {margin: 0 50%;}
+.margin60 {margin: 0 60%;}
+.margin70 {margin: 0 70%;}
+.color_red {color: rgb(255,0,0);}
+.color_gray {color: rgb(10,10,10);}
+.text_left {text-align:left;}
+.text_right {text-align:right;}
+
+body {
+  background-color: #f3f3f3;
+}
