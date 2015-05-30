@@ -56,14 +56,19 @@
     <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function(){
-    	var data = "request_type%3dPRESENT%26mysql_type%3dselect%26present_table%3dmain_present%26present_id%3d" + getUrlParameter('present_id');
+    	//var data = "request_type%3dPRESENT%26mysql_type%3dselect%26present_table%3dmain_present%26present_id%3d" + getUrlParameter('present_id');
+    	var data = "request_type=PRESENT&mysql_type=select&present_table=main_present&present_id=" + getUrlParameter('present_id');
     	$.ajax({
-    		  type: "get",
-    		  url: "http://10.136.19.19/post.jsp?data=" +data ,
-              dataType: "jsonp",
+    		  //type: "get",
+    		  //url: "http://10.136.19.19/post.jsp?data=" +data ,
+          type: "post",
+          url: "http://10.12.143.151/request",
+          data: data,
+              //dataType: "jsonp",
+              dataType: "json",
               scriptCharset: "utf-8",
-              jsonp: "callback",
-              jsonpCallback:"myJsonpHandler",
+              //jsonp: "callback",
+              //jsonpCallback:"myJsonpHandler",
     		  success:function(result) {
     			  var obj = result['present'];
     			  var html = '';
@@ -104,14 +109,19 @@
     	$("#liwuname").html(name);
     });
     function upateEvent(accept) {
-    	var data = 'request_type%3dPRESENT%26mysql_type%3dupdate%26present_table%3dpresent_event%26flag%3d' + accept + '%26event_id%3d' + getUrlParameter('event_id');
+    	//var data = 'request_type%3dPRESENT%26mysql_type%3dupdate%26present_table%3dpresent_event%26flag%3d' + accept + '%26event_id%3d' + getUrlParameter('event_id');
+    	var data = 'request_type=PRESENT&mysql_type=update&present_table=present_event&flag=' + accept + '&event_id=' + getUrlParameter('event_id');
     	$.ajax({
-  		  type: "get",
-  		  url: "http://10.136.19.19/post.jsp?data=" +data ,
-            dataType: "jsonp",
+  		  //type: "get",
+  		  //url: "http://10.136.19.19/post.jsp?data=" +data ,
+          type: "post",
+          url: "http://10.12.143.151/request",
+          data: data,
+            //dataType: "jsonp",
+            dataType: "json",
             scriptCharset: "utf-8",
-            jsonp: "callback",
-            jsonpCallback:"myJsonpHandler1",
+            //jsonp: "callback",
+            //jsonpCallback:"myJsonpHandler1",
   		    success:function(result) {
   			  //something
   		  }
